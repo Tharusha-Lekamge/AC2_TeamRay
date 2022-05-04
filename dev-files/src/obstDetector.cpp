@@ -1,17 +1,18 @@
-#include "servo.cpp"
-#include "sharp.cpp"
+#include "Servo.h"
+#include "ZSharpIR.h"
 
 class ObstDetector
 {
 private:
     Servo servo; // Servo motor
-    Sharp sharp; // Sharp Sensor
+    ZSharpIR sharp(10, 1080);
 
     int angle;
     float distance;
+    int sharpModel = 1080
 
-    const int proximArray[13][13]; // Stores angles and dist to the cells
-    int proximObsArray[13][13];    // Stores detected obstacles in locations
+        const int proximArray[13][13]; // Stores angles and dist to the cells
+    int proximObsArray[13][13];        // Stores detected obstacles in locations
     int angles[100];
 
 public:
@@ -20,6 +21,7 @@ public:
 };
 
 /*  hard code an array of tuples (angle,dist)
+
     from the current position to a specific cell
     in the map.
 
@@ -39,3 +41,8 @@ public:
     returns an 2-d array of detected obstacles.
     With relative position with current location as (0,0)
 */
+
+ObstDetector::ObstDetector(int servoPin, int sharpPin)
+{
+    servo.attach(servoPin);
+}

@@ -1,1 +1,0 @@
-// Used to update the current absolute location of the cleaner

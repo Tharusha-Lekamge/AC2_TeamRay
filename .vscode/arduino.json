@@ -1,4 +1,3 @@
 {
-    "board": "arduino:avr:uno",
-    "sketch": "dev-files\\src\\servoController.ino"
+    "board": "arduino:avr:uno"
 }

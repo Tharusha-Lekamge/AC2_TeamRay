@@ -1,25 +1,24 @@
 // IMPORTS
+#pragma once
+
 #include <Servo.h>
 #include "sharp/sharp.h"
-
-// Setting up Environment - PINS
-// Sharp sensor input
-#define sharpIrPin A0
-// Servo Motor output
-#define servoPin 9
+#include "Arduino.h"
 
 // servo motor
 class RelativeMapGen
 {
 private:
-    int sharpIrPin;
-    int servoPin;
+    uint8_t sharpIrPin = 14;
+    uint8_t servoPin = 9;
+
     int *map;
-    int x, y = 11, 11;    // map size
+    int x = 11; // map size
+    int y = 11;
+
     int servoRange = 180; // 180 degree full range of servo motor
-    bool clockwise = true;
     Servo sharpMountServo;
-    Sharp sharp;
+    Sharp sharp(this->sharpIrPin);
 
     // If the robot is facing in +y direction,
     // 0 degrees is to the -x direction
@@ -85,9 +84,10 @@ private:
     };
 
 public:
+    RelativeMapGen(int *mapArray);
     // passed map array should be a 2-D array with dimensions 11x11
-    RealtiveMapGen(int sharpPin, int servoPin, int *mapArray);
-    bool checkForObstacle();
+    RelativeMapGen(uint_8 sharpPin, uint_8 servoPin, int *mapArray);
+    bool checkForObstacle(int index);
     void updateMap(int *map);
     bool isInRange(float sharpReading, int blockVal);
-}
+};

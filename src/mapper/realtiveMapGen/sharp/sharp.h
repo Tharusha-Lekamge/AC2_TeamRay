@@ -1,5 +1,8 @@
-// Sharp sensor input
-#define sharpIrPin A0
+#pragma once
+#include "Arduino.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
 // SYSTEM VARIABLES
 
@@ -16,8 +19,10 @@ private:
     // constants taken after interpolation to get voltage -> distance conversion
     float k1 = 16.7647563;
     float k2 = -0.85803107;
+    int sharpPin;
 
 public:
-    Sharp(int sharpPin);
+    Sharp();
+    Sharp(uint8_t sharpPin);
     float getDistance();
-}
+};

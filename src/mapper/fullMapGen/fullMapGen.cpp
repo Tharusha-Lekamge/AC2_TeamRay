@@ -1,3 +1,5 @@
+#include "fullMapGen.h"
+
 void FullMapGen(int *currentLocation, int *relativeMap)
 {
     int startLocationX = *currentLocation[0] - 6;

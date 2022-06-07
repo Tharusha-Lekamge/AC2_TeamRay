@@ -1,16 +1,15 @@
-#include <Servo.h>
 #include "src/mapper/fullMapGen/fullMapGen.h"
+#include "Arduino.h"
+#include "stdio.h"
+FullMapGen f;
 
 void setup()
 {
-    pinMode(13, OUTPUT);
-    FullMapGen f = new FullMapGen();
 }
 
 void loop()
 {
-    Serial.println(f.checking());
-    delay(1000);
-    Serial.println(f.checking());
-    delay(1000);
+    int name = f.testing();
+    Serial.println(name);
+    delay(2000);
 }

@@ -1,13 +1,19 @@
-#include <Arduino.h>
+
+// #include <iostream>
+#include "stdio.h"
+#include <vector>
 
 class FullMapGen
-
 {
 private:
-    // vector<int> map;
-
 public:
-    void Ful lMapGen();
-    void FullMapGen(int *currentLocation, int *relativeMap);
-    String checking();
+    std::vector<std::vector<int>> fullMap;
+    std::vector<std::vector<int>> relMap;
+
+    void initData(std::vector<std::vector<int>> fullMapIn);
+    int testing();
+    /*currPos format = {row index, column index}*/
+    bool updateMap(std::vector<int> currPos, std::vector<std::vector<int>> relMapIn);
+
+    void printVec();
 };

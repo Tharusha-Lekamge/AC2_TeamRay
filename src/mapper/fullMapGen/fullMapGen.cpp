@@ -9,11 +9,6 @@ void FullMapGen::initData(std::vector<std::vector<int>> fullMapIn)
     this->fullMap = fullMapIn;
 }
 
-int FullMapGen::testing()
-{
-    return 69;
-}
-
 int main()
 {
     FullMapGen f;

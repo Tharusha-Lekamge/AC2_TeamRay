@@ -4,6 +4,7 @@
 #include <Servo.h>
 #include "sharp/sharp.h"
 #include "Arduino.h"
+#include <Vector.h>
 
 // servo motor
 class RelativeMapGen

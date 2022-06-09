@@ -1,7 +1,8 @@
-
-// #include <iostream>
+#pragma once
 #include "stdio.h"
-#include <vector>
+#include <iostream>
+#include <cmath>
+#include <Vector.h>
 
 class FullMapGen
 {

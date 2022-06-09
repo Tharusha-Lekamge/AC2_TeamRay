@@ -1,3 +1,5 @@
+#pragma once
+#include <Vector.h>
 #include "src/mapper/fullMapGen/fullMapGen.h"
 #include "Arduino.h"
 #include "stdio.h"

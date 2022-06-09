@@ -1,34 +1,29 @@
 #include "fullMapGen.h"
-#include "stdio.h"
-#include <iostream>
-#include <vector>
-#include <cmath>
 
 void FullMapGen::initData(std::vector<std::vector<int>> fullMapIn)
 {
     this->fullMap = fullMapIn;
 }
 
-int main()
-{
-    FullMapGen f;
-    std::vector<std::vector<int>> fullMap = {
-        {0, 1, 0, 0, 0, 1},
-        {1, 0, 1, 0, 0, 1},
-        {1, 1, 1, 0, 0, 1},
-        {0, 0, 1, 1, 0, 1},
-        {1, 0, 0, 0, 1, 1}};
-    std::vector<std::vector<int>>
-        relMap = {{0, 1, 0},
-                  {1, 1, 1},
-                  {0, 0, 1}};
-
-    f.initData(fullMap);
-    f.printVec();
-    f.updateMap({4, 0}, relMap);
-    std::cout << "---------------" << std::endl;
-    f.printVec();
-}
+// int main()
+// {
+//     FullMapGen f;
+//     std::vector<std::vector<int>> fullMap = {
+//         {0, 1, 0, 0, 0, 1},
+//         {1, 0, 1, 0, 0, 1},
+//         {1, 1, 1, 0, 0, 1},
+//         {0, 0, 1, 1, 0, 1},
+//         {1, 0, 0, 0, 1, 1}};
+//     std::vector<std::vector<int>>
+//         relMap = {{0, 1, 0},
+//                   {1, 1, 1},
+//                   {0, 0, 1}};
+//     f.initData(fullMap);
+//     f.printVec();
+//     f.updateMap({4, 0}, relMap);
+//     std::cout << "---------------" << std::endl;
+//     f.printVec();
+// }
 
 void FullMapGen::printVec()
 {

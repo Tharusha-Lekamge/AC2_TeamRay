@@ -1,7 +1,6 @@
 #include "fullMapGen.h"
 #include "stdio.h"
 #include <iostream>
-#include <vector>
 #include <cmath>
 
 void FullMapGen::initData(std::vector<std::vector<int>> fullMapIn)

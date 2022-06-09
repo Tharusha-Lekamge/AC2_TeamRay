@@ -1,6 +1,10 @@
+#include <StandardCplusplus.h>
+#include <vector>
+
 #include "src/mapper/fullMapGen/fullMapGen.h"
 #include "Arduino.h"
 #include "stdio.h"
+
 FullMapGen f;
 
 void setup()
@@ -9,7 +13,5 @@ void setup()
 
 void loop()
 {
-    int name = f.testing();
-    Serial.println(name);
-    delay(2000);
+    delay(1000);
 }

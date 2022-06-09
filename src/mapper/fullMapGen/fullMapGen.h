@@ -1,8 +1,5 @@
-
-// #include <iostream>
 #include "stdio.h"
 #include <vector>
-
 class FullMapGen
 {
 private:

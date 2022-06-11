@@ -1,16 +1,23 @@
 #include "stdio.h"
-#include <vector>
+
 class FullMapGen
 {
 private:
 public:
-    std::vector<std::vector<int>> fullMap;
-    std::vector<std::vector<int>> relMap;
-
-    void initData(std::vector<std::vector<int>> fullMapIn);
-    int testing();
+    /*============Vector Implementation(Fully functioning)=======================*/
     /*currPos format = {row index, column index}*/
-    bool updateMap(std::vector<int> currPos, std::vector<std::vector<int>> relMapIn);
+    // std::vector<std::vector<int>> fullMap;
+    // std::vector<std::vector<int>> relMap;
+    // bool updateMap(std::vector<int> currPos, std::vector<std::vector<int>> relMapIn);
+    // void printVec();
+    // void initData(std::vector<std::vector<int>> fullMapIn);
+    /*============Vector Implementation(Fully functioning)=======================*/
 
-    void printVec();
+    /*============Array Implementation(Fully Functioning and to be used)=======================*/
+    /*currPos format = {row index, column index}*/
+    int (*fullMap_arr)[6];
+    void initData_array(int (*ptr)[6]);
+    void printMap_arr();
+    void updateMap_arr(int *currentPos_arr, int (*relMap_arr)[3]);
+    /*============Array Implementation(Fully Functioning and to be used)=======================*/
 };

@@ -12,13 +12,17 @@ private:
     uint8_t sharpIrPin = 14;
     uint8_t servoPin = 9;
 
-    int *map;
-    int x = 11; // map size
-    int y = 11;
-
     int servoRange = 180; // 180 degree full range of servo motor
     Servo sharpMountServo;
     Sharp sharp(this->sharpIrPin);
+
+    int relMapIn[6][11] = {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
     // If the robot is facing in +y direction,
     // 0 degrees is to the -x direction
@@ -155,8 +159,9 @@ private:
     };
 
 public:
+    RelativeMapGen();
     RelativeMapGen(int *mapArray);
-    // passed map array should be a 2-D array with dimensions 11x11
+    // passed map array should be a 2-D array with dimensions 6x11
     RelativeMapGen(uint_8 sharpPin, uint_8 servoPin, int *mapArray);
     bool checkForObstacle(int index);
     void updateMap(int *map);

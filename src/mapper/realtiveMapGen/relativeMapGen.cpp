@@ -5,6 +5,10 @@ RelativeMapGen::RelativeMapGen(int *mapArray)
     this->map = mapArray;
     sharpMountServo.attach(servoPin);
 }
+RelativeMapGen::RelativeMapGen()
+{
+    sharpMountServo.attach(servoPin);
+}
 
 RelativeMapGen::RelativeMapGen(uint8_t sharpPin, uint8_t servoPin, int *mapArray)
 {

@@ -1,22 +1,9 @@
 #include "relativeMapGen.h"
 
-RelativeMapGen::RelativeMapGen(int *mapArray)
+RelativeMapGen::RelativeMapGen(int (*relMapIn_arr)[6])
 {
-    this->map = mapArray;
+    this->relMap_arr = relMapIn_arr;
     sharpMountServo.attach(servoPin);
-}
-RelativeMapGen::RelativeMapGen()
-{
-    sharpMountServo.attach(servoPin);
-}
-
-RelativeMapGen::RelativeMapGen(uint8_t sharpPin, uint8_t servoPin, int *mapArray)
-{
-    this->sharpIrPin = sharpPin;
-    this->servoPin = servoPin;
-    this->map = mapArray;
-    sharpMountServo.attach(servoPin);
-    // this->sharp = new Sharp(sharpPin);
 }
 
 bool RelativeMapGen::isInRange(float sharpReading, int blockVal)
@@ -43,16 +30,29 @@ bool RelativeMapGen::checkForObstacle(int index)
 void RelativeMapGen::updateMap(int *map)
 {
     int distance;
-    if (this->clockwise)
-        this->clockwise = false;
     {
-        for (int index = 0; index < 15; index++)
+        for (int index = 0; index < 42; index++)
         {
             sharpMountServo.write(angles[index]);
             if (this->checkForObstacle(index))
             {
-                map[mapBlock[index][0]][mapBlock[index][1]] += 1;
+                relMap_arr[mapBlock[index][0]][mapBlock[index][1]] += 1;
             }
         }
     }
 }
+
+// Wadakata Nathi COnstructors
+/*RelativeMapGen::RelativeMapGen()
+{
+    sharpMountServo.attach(servoPin);
+}
+
+RelativeMapGen::RelativeMapGen(int sharpPin, int servoPin, int *mapArray)
+{
+    this->sharpIrPin = sharpPin;
+    this->servoPin = servoPin;
+    this->map = mapArray;
+    sharpMountServo.attach(servoPin);
+    // this->sharp = new Sharp(sharpPin);
+}*/

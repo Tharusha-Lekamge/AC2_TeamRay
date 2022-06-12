@@ -15,6 +15,8 @@ public:
 
     /*============Array Implementation(Fully Functioning and to be used)=======================*/
     /*currPos format = {row index, column index}*/
+
+    // Array of array pointers
     int (*fullMap_arr)[6];
     void initData_array(int (*ptr)[6]);
     void printMap_arr();

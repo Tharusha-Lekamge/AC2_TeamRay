@@ -1,7 +1,7 @@
 {
-    "sketch": "sketch.ino",
+    "sketch": "sketch\\sketch_jun12a\\sketch_jun12a.ino",
     "output": "build",
     "board": "arduino:avr:uno",
     "programmer": "arduino:avrisp",
-    "port": "COM15"
+    "port": "COM3"
 }

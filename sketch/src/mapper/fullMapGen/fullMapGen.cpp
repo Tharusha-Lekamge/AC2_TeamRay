@@ -1,4 +1,4 @@
-#include "fullMapGen.h"
+#include "C:\Users\LENOVO\Documents\GitHub\AC2_TeamRay\sketch\src\mapper\fullMapGen\fullMapGen.h"
 #include "stdio.h"
 // #include <iostream>
 // #include <cmath>
@@ -16,7 +16,7 @@ int main()
 {
 }
 
-// int main()
+/*// int main()
 // {
 //     FullMapGen f;
 //     // std::vector<std::vector<int>> fullMap = {
@@ -70,7 +70,7 @@ int main()
 //         }
 //         std::cout << std::endl;
 //     }
-// }
+// }*/
 
 void FullMapGen::updateMap_arr(int *currentPos_arr, int (*relMap_arr)[3])
 {
@@ -91,6 +91,7 @@ void FullMapGen::updateMap_arr(int *currentPos_arr, int (*relMap_arr)[3])
     }
 }
 
+/*
 // void FullMapGen::printVec()
 // {
 //     std::vector<std::vector<int>> v = this->fullMap;
@@ -121,3 +122,4 @@ void FullMapGen::updateMap_arr(int *currentPos_arr, int (*relMap_arr)[3])
 //         }
 //     }
 // }
+*/

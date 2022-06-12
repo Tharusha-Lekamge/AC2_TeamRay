@@ -1,4 +1,6 @@
 #include "stdio.h"
+//#include "C:\Users\LENOVO\Documents\GitHub\AC2_TeamRay\sketch\src\mapper\realtiveMapGen\relativeMapGen.h"
+#include "Arduino.h"
 
 class FullMapGen
 {
@@ -15,6 +17,8 @@ public:
 
     /*============Array Implementation(Fully Functioning and to be used)=======================*/
     /*currPos format = {row index, column index}*/
+
+    // Array of array pointers
     int (*fullMap_arr)[6];
     void initData_array(int (*ptr)[6]);
     void printMap_arr();

@@ -9,20 +9,25 @@
 class RelativeMapGen
 {
 private:
-    uint8_t sharpIrPin = 14;
-    uint8_t servoPin = 9;
-
-    int *map;
-    int x = 11; // map size
-    int y = 11;
-
+    uint8_t servoPin = 11;
     int servoRange = 180; // 180 degree full range of servo motor
+
     Servo sharpMountServo;
-    Sharp sharp(this->sharpIrPin);
+    Sharp sharp;
+
+    int (*relMap_arr)[6];
+
+    /*int relMap_arr[6][11] = {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};*/
 
     // If the robot is facing in +y direction,
     // 0 degrees is to the -x direction
-    const int angles[36] =
+    const int angles[42] =
         {
             0,
             0,
@@ -65,7 +70,7 @@ private:
             90,
             90,
             90};
-    const int dist[36] =
+    const int dist[42] =
         {
             10,
             20,
@@ -108,7 +113,7 @@ private:
             40,
             50,
             60};
-    const int mapBlock[36][2] =
+    const int mapBlock[42][2] =
         {
             {0, 1},
             {0, 2},
@@ -155,9 +160,12 @@ private:
     };
 
 public:
-    RelativeMapGen(int *mapArray);
-    // passed map array should be a 2-D array with dimensions 11x11
-    RelativeMapGen(uint_8 sharpPin, uint_8 servoPin, int *mapArray);
+    // RelativeMapGen();
+    // RelativeMapGen(int sharpPin, int servoPin, int *mapArray);
+
+    // Pass a global variable pointer to the constructor
+    RelativeMapGen(int (*relMapIn_arr)[6]);
+    // passed map array should be a 2-D array with dimensions 6x11
     bool checkForObstacle(int index);
     void updateMap(int *map);
     bool isInRange(float sharpReading, int blockVal);

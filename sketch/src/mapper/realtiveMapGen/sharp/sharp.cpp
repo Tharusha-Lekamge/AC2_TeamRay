@@ -31,7 +31,7 @@ float Sharp::getDistance()
     sharpSensorVal = sum / 100;
     sharpSensorVolt = sharpSensorVal * Vr / 1024;
 
-    this->distance = std::pow(sharpSensorVolt * (1 / k1), 1 / k2);
+    this->distance = pow(sharpSensorVolt * (1 / k1), 1 / k2);
     // distance = (sharpSensorVolt * (1 / k1)) * *(1 / k2);
     return (this->distance);
 };

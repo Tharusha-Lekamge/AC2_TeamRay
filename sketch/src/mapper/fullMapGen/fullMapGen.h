@@ -1,5 +1,6 @@
 #include "stdio.h"
-#include "../realtiveMapGen/relativeMapGen.h"
+//#include "C:\Users\LENOVO\Documents\GitHub\AC2_TeamRay\sketch\src\mapper\realtiveMapGen\relativeMapGen.h"
+#include "Arduino.h"
 
 class FullMapGen
 {

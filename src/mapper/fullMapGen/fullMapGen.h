@@ -1,4 +1,5 @@
 #include "stdio.h"
+#include "../realtiveMapGen/relativeMapGen.h"
 
 class FullMapGen
 {

@@ -17,6 +17,14 @@ private:
 
     int (*relMap_arr)[6];
 
+    /*int relMap_arr[6][11] = {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};*/
+
     // If the robot is facing in +y direction,
     // 0 degrees is to the -x direction
     const int angles[42] =
@@ -152,10 +160,10 @@ private:
     };
 
 public:
-    // RelativeMapGen(int sharpPin, int servoPin, int *mapArray);
     // RelativeMapGen();
-    
-    //  Pass a global variable pointer to the constructor
+    // RelativeMapGen(int sharpPin, int servoPin, int *mapArray);
+
+    // Pass a global variable pointer to the constructor
     RelativeMapGen(int (*relMapIn_arr)[6]);
     // passed map array should be a 2-D array with dimensions 6x11
     bool checkForObstacle(int index);

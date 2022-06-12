@@ -3,5 +3,5 @@
     "output": "build",
     "board": "arduino:avr:uno",
     "programmer": "arduino:avrisp",
-    "port": "COM15"
+    "port": "COM3"
 }
